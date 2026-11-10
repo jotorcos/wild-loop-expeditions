@@ -109,7 +109,16 @@ const destinations = [
       <section class="section-pad contact" id="contact" aria-labelledby="contact-title">
         <div class="wrap contact-grid">
           <div class="contact-copy"><div class="eyebrow">The first step is yours</div><h2 class="section-title" id="contact-title">Where would<br />you like to go?</h2><p>Tell us a little about the trip you are imagining. There is no perfect brief—just start with what you know, and we can take it from there.</p><div class="contact-note"><strong>A note on planning</strong>Every enquiry is a starting point for a personal conversation. Routes, accommodation and other arrangements are discussed and confirmed individually.</div></div>
-          <form id="enquiry-form">
+<form
+  id="enquiry-form"
+  action="https://formspree.io/f/mgaagaza"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="Wild Loop Expeditions enquiry"
+  />
             <div class="form-grid">
               <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Name" /></div>
               <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="you@example.com" /></div>
