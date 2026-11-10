@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://wildloopexpeditions.cc',
+  // GitHub Pages project-site URL (use HTTPS).
+  site: 'https://jotorcos.github.io',
+  base: '/wild-loop-expeditions',
 });
