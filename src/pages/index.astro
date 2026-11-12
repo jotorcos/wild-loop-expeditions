@@ -1,0 +1,190 @@
+---
+const title = 'Wild Loop Expeditions — Small-group Cycling Expeditions in Spain';
+const description = 'Small-group road and gravel cycling expeditions through the quieter landscapes of Spain. Join a curated departure or bring your own group.';
+const destinations = [
+  { name: 'Valencia', region: 'THE STARTING POINT', image: 'photo-1470770841072-f978cf4d019e', alt: 'A quiet mountain road winding through open countryside', text: 'From the city edge to the quiet roads of the surrounding countryside, start close and let the landscape unfold.' },
+  { name: 'Castellón', region: 'MOUNTAIN COUNTRY', image: 'photo-1464822759023-fed622ff2c3b', alt: 'Layered mountain ridges beneath a clear sky', text: 'Climb inland through rugged sierras, forest tracks and villages that feel a long way from anywhere.' },
+  { name: 'Teruel', region: 'THE QUIET INLAND', image: 'photo-1500530855697-b586d89ba3ee', alt: 'A vast, sunlit landscape stretching toward distant hills', text: 'Big skies, open plateaus and long, quiet roads. Space to ride, and space to think.' },
+  { name: 'Inland Alicante', region: 'BEYOND THE COAST', image: 'photo-1519681393784-d120267933ba', alt: 'Mountain peaks in the last light of day', text: 'Leave the familiar shoreline behind for mountain passes and dry Mediterranean backroads.' },
+  { name: 'Cuenca & La Mancha', region: 'WIDE OPEN COUNTRY', image: 'photo-1500534623283-312aade485b7', alt: 'An expansive countryside beneath a broad open sky', text: 'A different kind of wild: quiet tracks, distant horizons and the unhurried rhythm of the interior.' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#183b32" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://wildloopexpeditions.cc/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <style is:global>
+      :root{--forest:#183b32;--forest-dark:#112d27;--bone:#f3f0e8;--sand:#ded6c5;--rust:#bb603f;--ink:#1d2521;--muted:#69716a;--line:rgba(29,37,33,.17);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif;--wrap:1220px}
+      *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}img{display:block;width:100%;object-fit:cover}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--rust);outline-offset:3px}::selection{background:var(--rust);color:#fff}.wrap{width:min(calc(100% - 48px),var(--wrap));margin-inline:auto}.eyebrow{font:500 11px/1.4 var(--mono);letter-spacing:.13em;text-transform:uppercase}.section-pad{padding:110px 0}.section-title{font:500 clamp(38px,5.4vw,70px)/.98 var(--display);letter-spacing:-.065em;margin:14px 0 24px}.small-link{display:inline-flex;align-items:center;gap:12px;font:500 11px var(--mono);letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid currentColor;padding:0 0 8px}.small-link span{font-size:16px;transition:transform .2s}.small-link:hover span{transform:translate(4px,-2px)}
+      .site-header{position:absolute;inset:0 0 auto;z-index:10;color:white}.nav-wrap{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.25)}.brand{display:flex;align-items:center;gap:11px;font:700 13px/1.05 var(--display);letter-spacing:.11em}.brand-mark{width:37px;height:37px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.7);border-radius:50%}.brand-mark svg{width:22px;height:22px}.brand span:last-child{display:block;font:400 9px var(--mono);letter-spacing:.16em;margin-top:5px}.nav-links{display:flex;align-items:center;gap:31px}.nav-links a{font:500 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.86);transition:color .2s}.nav-links a:hover{color:white}.nav-cta{padding:12px 16px;border:1px solid rgba(255,255,255,.65)}.menu-toggle{display:none;background:none;border:0;color:white;padding:10px;font:500 11px var(--mono);text-transform:uppercase}
+      .hero{min-height:760px;height:min(860px,100svh);position:relative;display:flex;align-items:flex-end;color:#fff;background:#233b34;isolation:isolate}.hero::before{content:'';position:absolute;inset:0;z-index:-2;background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=88');background-size:cover;background-position:center 55%;transform:scale(1.01)}.hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(13,31,26,.76) 0%,rgba(13,31,26,.38) 52%,rgba(13,31,26,.12) 100%),linear-gradient(0deg,rgba(13,31,26,.55),transparent 50%)}.hero-content{padding-top:160px;padding-bottom:72px}.hero-kicker{display:flex;align-items:center;gap:12px;color:#e3ddcf;margin-bottom:22px}.hero-kicker::before{content:'';width:30px;height:1px;background:var(--rust)}.hero h1{max-width:820px;margin:0;font:500 clamp(54px,9vw,112px)/.88 var(--display);letter-spacing:-.075em;text-transform:uppercase}.hero h1 em{font-style:normal;color:#d9c9aa}.hero-copy{max-width:515px;margin:27px 0 30px;color:rgba(255,255,255,.88);font-size:16px;line-height:1.7}.hero-actions{display:flex;align-items:center;gap:26px}.button{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:22px;padding:0 19px;background:var(--rust);color:white;border:1px solid var(--rust);font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;transition:background .2s,color .2s}.button:hover{background:#a84e31;border-color:#a84e31}.hero .small-link{border-color:rgba(255,255,255,.65)}.hero-bottom{position:absolute;bottom:25px;right:max(24px,calc((100vw - var(--wrap))/2));font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+      .intro{display:grid;grid-template-columns:1fr 1fr;gap:11%;align-items:start}.intro-aside{padding-top:12px}.intro h2{max-width:700px}.intro-copy{max-width:440px;color:#535d56;font-size:17px}.intro-copy p{margin:0 0 18px}.intro-note{display:flex;align-items:center;gap:14px;margin-top:31px;font:11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--forest)}.intro-note::before{content:'';width:42px;height:1px;background:var(--rust)}
+      .destinations{background:#e8e3d8}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px}.section-head .section-title{max-width:640px;margin-bottom:0}.section-head p{max-width:300px;color:var(--muted);font-size:14px;margin:0 0 4px}.destination-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.destination{position:relative;min-height:340px;color:white;overflow:hidden;background:#47534b}.destination:nth-child(1),.destination:nth-child(4){grid-column:span 5}.destination:nth-child(2),.destination:nth-child(3),.destination:nth-child(5){grid-column:span 7}.destination:nth-child(2),.destination:nth-child(3){min-height:320px}.destination img{position:absolute;inset:0;height:100%;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.destination:hover img{transform:scale(1.045)}.destination::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,31,26,.82),rgba(16,31,26,.03) 75%)}.destination-content{position:absolute;z-index:1;left:25px;right:25px;bottom:23px}.destination .eyebrow{color:#e4cbb0}.destination h3{margin:7px 0 4px;font:500 clamp(25px,3vw,37px)/1 var(--display);letter-spacing:-.04em}.destination p{max-width:460px;margin:0;color:rgba(255,255,255,.83);font-size:13px;line-height:1.55}.destination-tag{position:absolute;z-index:1;right:21px;top:21px;font:10px var(--mono);letter-spacing:.08em;color:#fff;border:1px solid rgba(255,255,255,.55);padding:7px 9px}
+      .experience{background:var(--forest);color:var(--bone)}.experience-top{display:grid;grid-template-columns:1fr .75fr;gap:12%;align-items:end;margin-bottom:54px}.experience-top .section-title{max-width:640px}.experience-top p{max-width:390px;color:rgba(243,240,232,.72);margin:0 0 7px}.experience-list{border-top:1px solid rgba(243,240,232,.3)}.experience-row{display:grid;grid-template-columns:70px 1fr 1.1fr 40px;gap:22px;align-items:center;padding:25px 0;border-bottom:1px solid rgba(243,240,232,.3)}.experience-row .num{font:11px var(--mono);color:#d39a78}.experience-row h3{font:500 clamp(21px,2.6vw,31px)/1.1 var(--display);letter-spacing:-.04em;margin:0}.experience-row p{font-size:13px;color:rgba(243,240,232,.7);margin:0;max-width:430px}.experience-row .plus{justify-self:end;font:24px var(--body);color:#d39a78}.experience-foot{display:flex;justify-content:space-between;gap:24px;margin-top:26px;color:rgba(243,240,232,.68);font-size:12px}.experience-foot strong{color:var(--bone);font-weight:500}.booking{background:#f3f0e8}.booking-options{display:grid;grid-template-columns:1fr 1fr;gap:18px}.booking-card{padding:34px 35px 31px;border:1px solid var(--line);background:rgba(255,255,255,.2);min-height:270px;display:flex;flex-direction:column;align-items:flex-start}.booking-card .eyebrow{color:var(--rust)}.booking-card h3{font:500 clamp(28px,3.3vw,42px)/1 var(--display);letter-spacing:-.05em;margin:25px 0 13px}.booking-card p{max-width:500px;color:#535d56;font-size:14px;margin:0 0 24px}.booking-card span{margin-top:auto;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}.booking-note{font-size:12px;color:var(--muted);margin:19px 0 0}
+      .tailor{display:grid;grid-template-columns:1fr 1fr;min-height:590px;background:#d9d0be}.tailor-image{min-height:590px;background:#59665a;position:relative}.tailor-image img{position:absolute;inset:0;height:100%}.tailor-text{align-self:center;padding:80px clamp(35px,8vw,120px)}.tailor-text .section-title{font-size:clamp(38px,4.7vw,60px)}.tailor-text>p{max-width:460px;color:#545c55}.included{margin:28px 0 33px;padding:0;list-style:none;border-top:1px solid var(--line)}.included li{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.included li::before{content:'↗';color:var(--rust);font-size:15px}
+      .process{background:#f8f6f0}.process-intro{display:grid;grid-template-columns:1fr .6fr;gap:12%;align-items:end;margin-bottom:48px}.process-intro p{max-width:380px;color:var(--muted);margin:0 0 8px}.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}.step{padding:23px 20px 6px 0;border-right:1px solid var(--line);margin-right:20px}.step:last-child{border-right:0;margin-right:0}.step .eyebrow{color:var(--rust)}.step h3{font:500 21px/1.2 var(--display);letter-spacing:-.035em;margin:27px 0 12px}.step p{font-size:13px;color:var(--muted);max-width:220px;margin:0}
+      .about{display:grid;grid-template-columns:.9fr 1fr;gap:12%;align-items:center;background:var(--sand)}.about-photo{position:relative;min-height:490px}.about-photo img{position:absolute;inset:0;height:100%}.about-copy{max-width:510px}.about-copy p{color:#535d56}.about-quote{margin:28px 0 0;padding-left:17px;border-left:2px solid var(--rust);font:500 20px/1.35 var(--display);letter-spacing:-.025em}
+      .contact{background:var(--forest-dark);color:var(--bone)}.contact-grid{display:grid;grid-template-columns:.8fr 1.1fr;gap:12%;align-items:start}.contact-copy{position:sticky;top:110px}.contact-copy .section-title{max-width:490px}.contact-copy>p{max-width:390px;color:rgba(243,240,232,.7)}.contact-note{margin-top:35px;padding-top:21px;border-top:1px solid rgba(243,240,232,.25);font-size:12px;color:rgba(243,240,232,.7)}.contact-note strong{display:block;color:var(--bone);font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase;margin-bottom:7px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px 16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(243,240,232,.75)}.field input,.field select,.field textarea{width:100%;min-height:47px;border:1px solid rgba(243,240,232,.33);border-radius:0;background:rgba(255,255,255,.035);padding:11px 12px;color:var(--bone)}.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m2 4 4 4 4-4' fill='none' stroke='%23f3f0e8' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}.field select option{color:var(--ink)}.field textarea{min-height:122px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:rgba(243,240,232,.42)}.form-submit{margin-top:23px}.form-status{margin:18px 0 0;padding:16px;border:1px solid rgba(243,240,232,.3);font-size:13px;color:var(--bone)}.form-status[hidden]{display:none}.form-status textarea{display:block;margin-top:13px;width:100%;min-height:180px;padding:12px;background:rgba(0,0,0,.2);color:var(--bone);border:1px solid rgba(243,240,232,.25);font:12px/1.6 var(--mono)}.copy-button{margin-top:10px;padding:10px 12px;border:1px solid rgba(243,240,232,.55);background:none;color:var(--bone);font:10px var(--mono);text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+      .footer{background:#0d241e;color:rgba(243,240,232,.7);padding:25px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer .brand{color:var(--bone)}.footer p{font:10px var(--mono);letter-spacing:.06em;margin:0}.footer a:not(.brand){font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid rgba(243,240,232,.5);padding-bottom:4px}
+      @media(max-width:850px){.wrap{width:min(calc(100% - 40px),var(--wrap))}.nav-links{gap:17px}.nav-links a{font-size:9px}.section-pad{padding:82px 0}.intro{gap:7%}.destination{min-height:300px}.experience-row{grid-template-columns:45px 1fr 1.1fr 25px;gap:14px}.tailor-text{padding:60px 38px}.contact-grid{gap:7%}}
+      @media(max-width:680px){html{scroll-padding-top:68px}.wrap{width:calc(100% - 38px)}.nav-wrap{height:68px}.brand{font-size:12px}.brand-mark{width:34px;height:34px}.menu-toggle{display:block;position:relative;z-index:12}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--forest-dark);padding:14px 19px 22px;align-items:stretch;flex-direction:column;gap:0;border-bottom:1px solid rgba(255,255,255,.25)}.nav-links.open{display:flex}.nav-links a{padding:14px 2px;border-bottom:1px solid rgba(255,255,255,.14);font-size:11px}.nav-links .nav-cta{margin-top:13px;text-align:center;border:1px solid rgba(255,255,255,.6)}.hero{height:92svh;min-height:690px;max-height:850px}.hero::before{background-position:58% center}.hero::after{background:linear-gradient(90deg,rgba(13,31,26,.58),rgba(13,31,26,.15)),linear-gradient(0deg,rgba(13,31,26,.68),transparent 78%)}.hero-content{padding-top:130px;padding-bottom:91px}.hero h1{font-size:clamp(54px,15vw,82px);max-width:600px}.hero-copy{font-size:14px;max-width:400px}.hero-actions{align-items:flex-start;flex-direction:column;gap:20px}.hero-bottom{left:19px;right:auto;bottom:23px;font-size:9px}.section-pad{padding:70px 0}.intro{grid-template-columns:1fr;gap:0}.intro-aside{padding-top:0}.intro .section-title{margin-bottom:20px}.intro-copy{font-size:15px}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:25px}.section-head p{font-size:13px}.destination-grid{grid-template-columns:1fr;gap:12px}.destination,.destination:nth-child(n){grid-column:1;min-height:335px}.destination:nth-child(2),.destination:nth-child(3){min-height:335px}.destination-content{left:19px;right:19px;bottom:19px}.destination-tag{right:15px;top:15px}.experience-top{grid-template-columns:1fr;gap:8px;margin-bottom:34px}.booking-options{grid-template-columns:1fr}.booking-card{min-height:0;padding:27px 23px}.experience-top p{font-size:14px}.experience-row{grid-template-columns:31px 1fr 22px;gap:10px;padding:20px 0}.experience-row p{grid-column:2/3;grid-row:2;font-size:12px}.experience-row h3{grid-column:2;grid-row:1}.experience-row .plus{grid-column:3;grid-row:1}.experience-foot{flex-direction:column;gap:7px;font-size:11px}.tailor{grid-template-columns:1fr}.tailor-image{min-height:360px}.tailor-text{padding:48px 21px 55px}.tailor-text .section-title{font-size:45px}.process-intro{grid-template-columns:1fr;gap:8px;margin-bottom:31px}.steps{grid-template-columns:1fr 1fr;row-gap:0}.step{min-height:185px;padding:19px 14px 15px 0;margin:0 14px 0 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.step:nth-child(2){border-right:0;margin-right:0;padding-left:8px}.step:nth-child(3){border-bottom:0}.step:nth-child(4){border-right:0;border-bottom:0;margin-right:0;padding-left:8px}.step h3{font-size:19px;margin:20px 0 8px}.about{grid-template-columns:1fr;gap:32px}.about-photo{min-height:370px}.about-quote{font-size:18px}.contact-grid{grid-template-columns:1fr;gap:38px}.contact-copy{position:static}.contact-copy .section-title{font-size:52px}.form-grid{grid-template-columns:1fr;gap:16px}.field.full{grid-column:auto}.footer-inner{align-items:flex-start;flex-direction:column}.footer p{line-height:1.6}}
+      @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap nav-wrap">
+        <a class="brand" href="#home" aria-label="Wild Loop Expeditions home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 16.8c1.8-4.9 5.2-9.2 9.5-9.2 3.3 0 5.3 2.4 4.4 4.7-.7 1.8-3.1 2.1-4.5.8-1-1-.7-2.7.1-3.8M4 16.8h7.1c2.8 0 4.9-1 6.8-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span>WILD LOOP<span>EXPEDITIONS</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+          <a href="#experience">Experiences</a><a href="#destinations">Destinations</a><a href="#process">How it works</a><a href="#about">About</a><a class="nav-cta" href="#contact">Plan your ride ↗</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="wrap hero-content">
+          <div class="eyebrow hero-kicker">Small-group cycling expeditions · Spain</div>
+          <h1 id="hero-title">Beyond the familiar.<br /><em>Into the wild.</em></h1>
+          <p class="hero-copy">Small-group road and gravel journeys through the quieter landscapes of Spain. Ride extraordinary roads, discover local places and share the experience with people who love cycling as much as you do.</p>
+          <div class="hero-actions"><a class="button" href="#contact">Find your expedition <span aria-hidden="true">↗</span></a><a class="small-link" href="#experience">Explore the experience <span aria-hidden="true">↘</span></a></div>
+        </div>
+        <div class="hero-bottom">39°28′ N &nbsp; 0°23′ W · Valencia, Spain</div>
+      </section>
+      <section class="section-pad" aria-labelledby="intro-title">
+        <div class="wrap intro">
+          <div><div class="eyebrow">A different way to find your way</div><h2 class="section-title" id="intro-title">More than a ride.<br />A way to discover.</h2></div>
+          <div class="intro-aside intro-copy"><p>The best roads rarely lead to the obvious places. Wild Loop brings together experienced cyclists for carefully designed journeys through lesser-known landscapes, local food and places worth slowing down for.</p><p>Expect small groups, thoughtful route design and a balance of riding, discovery and time to enjoy being away. Our initial route ideas focus on Eastern Spain, with room to explore further as the collection grows.</p><div class="intro-note">Small groups · Typically 4–10 riders</div></div>
+        </div>
+      </section>
+      <section class="section-pad destinations" id="destinations" aria-labelledby="destinations-title">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Eastern Spain, at your own pace</div><h2 class="section-title" id="destinations-title">The further in,<br />the more it opens up.</h2></div><p>Our first route ideas explore the landscapes around Valencia and the wider east of Spain. Each destination is a starting point, not a fixed catalogue.</p></div>
+          <div class="destination-grid">{destinations.map((destination, index) => <article class="destination"><img src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=1100&q=80`} alt={destination.alt} loading={index === 0 ? 'eager' : 'lazy'} /><span class="destination-tag">0{index + 1} / EAST</span><div class="destination-content"><div class="eyebrow">{destination.region}</div><h3>{destination.name}</h3><p>{destination.text}</p></div></article>)}</div>
+        </div>
+      </section>
+      <section class="section-pad experience" id="experience" aria-labelledby="experience-title">
+        <div class="wrap">
+          <div class="experience-top"><div><div class="eyebrow">Two ways to experience Wild Loop</div><h2 class="section-title" id="experience-title">Find your kind<br />of wild.</h2></div><p>Choose a considered, ready-to-ride experience or a more personal journey. Both are built around great riding, local discovery and small groups.</p></div>
+          <div class="experience-list">
+            <article class="experience-row"><span class="num">01</span><h3>Standard</h3><p>A well-crafted expedition with a clear route, planned daily stages and carefully selected local recommendations. A great way to experience Wild Loop with everything important thoughtfully considered.</p><span class="plus" aria-hidden="true">↗</span></article>
+            <article class="experience-row"><span class="num">02</span><h3>Premium</h3><p>A more personal experience with a higher level of tailoring, hand-picked stays and extra attention to the details that make the journey yours.</p><span class="plus" aria-hidden="true">↗</span></article>
+          </div>
+          <div class="experience-foot"><span><strong>Road, gravel or mixed terrain.</strong> Designed for confident cyclists with a regular riding base.</span><span>Small groups · Standard &amp; Premium</span></div>
+        </div>
+      </section>
+      <section class="section-pad booking" aria-labelledby="booking-title">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Come as you are, ride together</div><h2 class="section-title" id="booking-title">Two ways to<br />join the journey.</h2></div><p>Whether you are travelling solo or already have your people, there is a place for you on the road.</p></div>
+          <div class="booking-options">
+            <article class="booking-card"><div class="eyebrow">01 / Meet your people</div><h3>Join a small group</h3><p>Travelling on your own or as a couple? Register your interest in an upcoming expedition and we will help bring together riders with a compatible level, pace and shared sense of adventure.</p><span>Individual places · Curated groups</span></article>
+            <article class="booking-card"><div class="eyebrow">02 / Bring your own</div><h3>Private group</h3><p>Have friends, a club or a group of riding partners? We can shape a private expedition around your dates, preferred terrain and the kind of experience you want to share.</p><span>Exclusive booking · Your group only</span></article>
+          </div>
+          <p class="booking-note">Group sizes are usually around 4–10 riders. Private trips for smaller groups can be discussed with a minimum booking value. Final group sizes and availability depend on the expedition.</p>
+        </div>
+      </section>
+      <section class="tailor" aria-labelledby="tailor-title">
+        <div class="tailor-image"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85" alt="Quiet mountain landscape beneath a starry evening sky" loading="lazy" /></div>
+        <div class="tailor-text"><div class="eyebrow">Thought through, together</div><h2 class="section-title" id="tailor-title">The details<br />make the journey.</h2><p>The best expeditions are about more than the kilometres. We bring together rewarding routes and the right places to stay, eat, pause and explore—so the days feel like a complete escape, not just a training plan.</p><ul class="included"><li>Road, gravel and mixed-terrain routes for experienced riders</li><li>Thoughtful daily distances, elevation and riding rhythm</li><li>Selected accommodation and local food experiences</li><li>Time for nature, recovery and places worth a detour</li></ul><a class="small-link" href="#contact">Tell us what you have in mind <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <section class="section-pad process" id="process" aria-labelledby="process-title">
+        <div class="wrap"><div class="process-intro"><div><div class="eyebrow">A simple start to something good</div><h2 class="section-title" id="process-title">From first thought<br />to open road.</h2></div><p>Start by registering your interest in a small-group expedition or tell us about the private trip you have in mind. We will make sure the riding, group and experience are a good fit.</p></div>
+          <div class="steps"><article class="step"><div class="eyebrow">01 / Start a conversation</div><h3>Tell us your idea</h3><p>Share when you would like to travel, who is coming and what has you curious.</p></article><article class="step"><div class="eyebrow">02 / Get to know your ride</div><h3>Find your rhythm</h3><p>We understand your riding level, preferred terrain, daily pace and what you want from the trip.</p></article><article class="step"><div class="eyebrow">03 / Shape the journey</div><h3>Make it yours</h3><p>We match you with a suitable group or shape a private itinerary, then confirm the details before you book.</p></article><article class="step"><div class="eyebrow">04 / Head out</div><h3>Explore your way</h3><p>Ride with confidence, enjoy the local discoveries and let someone else take care of the planning.</p></article></div>
+        </div>
+      </section>
+      <section class="section-pad about" id="about" aria-labelledby="about-title">
+        <div class="wrap about-photo"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1100&q=85" alt="A winding route through a quiet mountain valley" loading="lazy" /></div>
+        <div class="about-copy"><div class="eyebrow">A personal kind of adventure</div><h2 class="section-title" id="about-title">A love of cycling.<br />A taste for discovery.</h2><p>Wild Loop grew from a love of cycling, exploration and the feeling of finding a place you did not know you were looking for.</p><p>Our first ideas take shape around Valencia and the landscapes of Eastern Spain. We design the journeys and are building relationships with local specialists and guides, keeping the experience personal from the first conversation to the last ride.</p><p>Wild Loop is being built around thoughtful planning and a network of local knowledge. Our aim is simple: make it easier for curious, experienced cyclists to discover a different side of Spain, together.</p><div class="about-quote">“Go further. Stay wild.”</div></div>
+      </section>
+      <section class="section-pad contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div class="contact-copy"><div class="eyebrow">The first step is yours</div><h2 class="section-title" id="contact-title">Where would<br />you like to go?</h2><p>Tell us a little about the trip you are imagining. There is no perfect brief—just start with what you know, and we can take it from there.</p><div class="contact-note"><strong>A note on planning</strong>Tell us whether you would like to join a small group or plan a private expedition. We will follow up to understand your riding level, expectations and the best fit.</div></div>
+<form
+  id="enquiry-form"
+  action="https://formspree.io/f/mgaagaza"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="Wild Loop Expeditions enquiry"
+  />
+            <div class="form-grid">
+              <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Name" /></div>
+              <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="you@example.com" /></div>
+              <div class="field"><label for="country">Country</label><input id="country" name="country" autocomplete="country-name" maxlength="80" placeholder="Where are you based?" /></div>
+              <div class="field"><label for="language">Preferred language</label><select id="language" name="language"><option value="">Select</option><option>English</option><option>Spanish</option><option>Other / flexible</option></select></div>
+              <div class="field"><label for="dates">When are you thinking?</label><input id="dates" name="dates" maxlength="100" placeholder="A month, season or dates" /></div>
+              <div class="field"><label for="booking">How would you like to ride?</label><select id="booking" name="booking"><option value="">Select</option><option>Join a small group</option><option>Private expedition for my group</option><option>Open to either</option></select></div>
+              <div class="field"><label for="participants">Number of riders</label><select id="participants" name="participants"><option value="">Select</option><option>1</option><option>2</option><option>3–4</option><option>5–8</option><option>9–10</option><option>11–12</option><option>Not sure yet</option></select></div>
+              <div class="field"><label for="style">Preferred riding</label><select id="style" name="style"><option value="">Select</option><option>Gravel</option><option>Road</option><option>Mixed terrain</option><option>Not sure yet</option></select></div>
+              <div class="field"><label for="level">Experience / fitness</label><input id="level" name="level" maxlength="180" placeholder="For example: regular 80–120 km rides, climbing, multi-day trips…" /></div>
+              <div class="field"><label for="duration">Trip duration</label><input id="duration" name="duration" maxlength="100" placeholder="For example, 4–5 days" /></div>
+              <div class="field full"><label for="message">Your trip idea *</label><textarea id="message" name="message" required maxlength="3000" placeholder="The kind of places, riding or moments you are hoping to find…"></textarea></div>
+            </div>
+            <button class="button form-submit" type="submit">Start planning your expedition <span aria-hidden="true">↗</span></button>
+            <div id="form-status" class="form-status" role="status" aria-live="polite" hidden><strong>Your enquiry is ready, but it has not been sent.</strong><br />This website does not yet have a submission service. Copy your enquiry below and send it through your preferred email once a contact address is configured.<textarea id="enquiry-copy" readonly aria-label="Prepared enquiry text"></textarea><button class="copy-button" id="copy-enquiry" type="button">Copy enquiry</button><span id="copy-status" aria-live="polite"></span></div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 16.8c1.8-4.9 5.2-9.2 9.5-9.2 3.3 0 5.3 2.4 4.4 4.7-.7 1.8-3.1 2.1-4.5.8-1-1-.7-2.7.1-3.8M4 16.8h7.1c2.8 0 4.9-1 6.8-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span>WILD LOOP<span>EXPEDITIONS</span></span></a><p>GO FURTHER. STAY WILD. · EASTERN SPAIN</p><a href="#home">Back to top ↑</a></div></footer>
+    <script>
+      const menuButton = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#primary-nav');
+      menuButton?.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        nav?.classList.toggle('open', !isOpen);
+        menuButton.textContent = isOpen ? 'Menu' : 'Close';
+      });
+      nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        if (menuButton) menuButton.textContent = 'Menu';
+      }));
+
+      const form = document.querySelector('#enquiry-form');
+      const status = document.querySelector('#form-status');
+      const output = document.querySelector('#enquiry-copy');
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const fields = [
+          ['Name', 'name'], ['Email', 'email'], ['Country', 'country'], ['Preferred language', 'language'], ['Preferred dates / season', 'dates'],
+          ['Booking preference', 'booking'], ['Number of participants', 'participants'], ['Riding style', 'style'], ['Experience / fitness', 'level'],
+          ['Desired duration', 'duration'], ['Trip idea', 'message'],
+        ];
+        const enquiry = fields.map(([label, key]) => `${label}: ${data.get(key) || 'Not specified'}`).join('\\n');
+        if (output) output.value = `WILD LOOP EXPEDITIONS — NEW ENQUIRY\\n\\n${enquiry}`;
+        if (status) { status.hidden = false; status.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+      });
+      document.querySelector('#copy-enquiry')?.addEventListener('click', async () => {
+        const output = document.querySelector('#enquiry-copy');
+        const feedback = document.querySelector('#copy-status');
+        if (!output || !feedback) return;
+        try { await navigator.clipboard.writeText(output.value); feedback.textContent = ' Copied.'; }
+        catch { output.focus(); output.select(); feedback.textContent = ' Select and copy the text above.'; }
+      });
+    </script>
+  </body>
+</html>
