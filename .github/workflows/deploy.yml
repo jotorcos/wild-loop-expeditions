@@ -1,9 +1,10 @@
 name: Deploy Astro site to GitHub Pages
 
-# The site source lives on build/wild-loop-expeditions-site.
-# Keep a manual deployment path from main; automatic deployments run from the source branch.
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - website-alignment
 
 permissions:
   contents: read
@@ -17,11 +18,19 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out site source
+      - name: Checkout production website
         uses: actions/checkout@v4
         with:
           ref: build/wild-loop-expeditions-site
+          path: production
+
+      - name: Checkout preview website
+        uses: actions/checkout@v4
+        with:
+          ref: website-alignment
+          path: preview
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -31,19 +40,35 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: npm install
+      - name: Build production website
+        working-directory: production
+        run: |
+          npm install
+          npm run check
+          npm run build
 
-      - name: Check Astro project
-        run: npm run check
+      - name: Prepare combined website
+        run: |
+          mkdir -p site
+          cp -R production/dist/. site/
 
-      - name: Build site
-        run: npm run build
+      - name: Build preview website
+        working-directory: preview
+        run: |
+          npm install
+          npm run check
+          sed -i "s|base: '/wild-loop-expeditions'|base: '/wild-loop-expeditions/preview'|" astro.config.mjs
+          npm run build
+
+      - name: Add preview to website
+        run: |
+          mkdir -p site/preview
+          cp -R preview/dist/. site/preview/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: site
 
   deploy:
     needs: build
@@ -51,6 +76,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
